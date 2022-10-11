@@ -30,4 +30,13 @@ int main() {
 }
 ```
 
+## Narrowing 
+
+```cpp 
+int main() {
+    int i(3.14);
+
+}
+```
+
 
