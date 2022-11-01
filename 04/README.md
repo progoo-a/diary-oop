@@ -1,5 +1,28 @@
 # Semaine 04/16
 
+ - [ ] Héritage
+   - [ ] `class Cat : public Animal`
+   - [ ] Une flèche blanche pour l'héritage sur un diagramme UML de classe
+ - [ ] Surcharge 
+   - [ ] Les méthodes visant à être surchargée dans une classe **dérivée** seront marquée `virtual`
+   - [ ] Les méthodes surchargeant une classe de **base** seront marquée `override`
+ - [ ] Interface et classes abstraites 
+   - [ ] `= 0`
+## Héritage avec Surcharge 
+
+```cpp
+class Base {
+  public:
+  Base() = default;
+  virtual int foo() {}
+};
+class Child : public Base {
+  public: 
+  Child() : Base{} {};
+  int foo() override {}
+}
+```
+
 ## Exercices
 
 ### Exercice 1
