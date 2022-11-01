@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <functional>
 using namespace std;
 
 class Board;
@@ -13,6 +14,7 @@ class Cell {
     Cell(int x, int y, bool is_bomb = false): x{x}, y{y}, is_bomb{is_bomb} {}
 
     string str() {
+        #if 0
         stringstream ss;
         string color(is_bomb ? "\033[0;31m" : "");
         string reset(is_bomb ? "\033[0m" : "");
@@ -23,6 +25,17 @@ class Cell {
            << setw(2) << setfill('0') << y
            << ')' << reset;
         return ss.str();
+        #else
+        return is_bomb ? "B" : ".";
+        #endif
+    }
+
+    void display(ostream &os) {
+        os << str();
+    }
+
+    void iterate_neighbours(function<void(Cell&)>cb) {
+        // ...
     }
 
     friend Board;
@@ -50,11 +63,11 @@ class Board {
         }
     }
 
-    void display() {
+    void display(ostream &os) {
         for (auto &row : cells) {
             for (auto &cell : row)
-                cout << cell.str();
-            cout << endl;
+                os << cell.str();
+            os << endl;
         }
     }
 
@@ -70,8 +83,8 @@ class Board {
 
 int main() {
     Board board;
-    board.display();
+    board.display(cout);
     board.randomize();
     cout << "-----------" << endl;
-    board.display();
+    board.display(cout);
 }
