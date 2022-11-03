@@ -14,20 +14,7 @@ class Cell {
     Cell(int x, int y, bool is_bomb = false): x{x}, y{y}, is_bomb{is_bomb} {}
 
     string str() {
-        #if 0
-        stringstream ss;
-        string color(is_bomb ? "\033[0;31m" : "");
-        string reset(is_bomb ? "\033[0m" : "");
-        ss << color
-           << "("
-           << setw(2) << setfill('0') << x
-           << ','
-           << setw(2) << setfill('0') << y
-           << ')' << reset;
-        return ss.str();
-        #else
         return is_bomb ? "B" : ".";
-        #endif
     }
 
     void display(ostream &os) {
