@@ -17,7 +17,6 @@ class Voyager: public Person {
     Vehicle *vehicle;
     int ticket;
     public:
-    //using Person::Person;
     Voyager(std::string name) : ticket{0}, Person{name} {}
     void accept(Vehicle &vehicle) {
         this->vehicle = &vehicle;
