@@ -1,0 +1,3 @@
+L'expression est : 2 + 3
+L'expression est : 5 + 8
+L'expression est : (2 * 4 + 5) / 9
