@@ -1,9 +1,12 @@
 /**
- * Une classe `User` peut s'abonner à un flux d'information `News`. Lorsqu'une nouvelle est publiée les utilisateurs sont notifiés:
+ * Une classe `User` peut s'abonner à un flux d'information `News`.
+ * Lorsqu'une nouvelle est publiée les utilisateurs sont notifiés:
  *
  * - `User` est un `Subscriber` qui dispose d'une méthode `update()`
- * - `News` est un `Publisher` qui dispose d'une méthode `subscribe()` et `notifySubscribers()`
- * - `News` dispose d'une méthode `publish(std::string news)` qui insert une nouvelle information et notifie tous les abonnés.
+ * - `News` est un `Publisher` qui dispose d'une méthode `subscribe()`
+ *    et `notifySubscribers()`
+ * - `News` dispose d'une méthode `publish(std::string news)` qui insert
+ *    une nouvelle information et notifie tous les abonnés.
  */
 #include <iostream>
 #include <memory>
@@ -46,11 +49,12 @@ public:
 
 int main() {
     News news;
-    User user1("user1");
-    User user2("user2");
-    User user3("user3");
-    news.subscribe(&user1);
-    news.subscribe(&user2);
-    news.subscribe(&user3);
+    std::vector<User> users;
+    users.emplace_back("user1");
+    users.emplace_back("user2");
+    users.emplace_back("user3");
+    for (auto &user : users)
+        news.subscribe(&user);
+
     news.publish("Hello World!");
 }

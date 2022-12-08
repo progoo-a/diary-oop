@@ -46,6 +46,7 @@ class Storage final : public Singleton<Storage> {
     auto items() { return data.items(); }
 
     Storage(token) {
+        std::cout << "Load\n";
         try {
             std::ifstream f("vault.json");
             data = json::parse(f);
@@ -56,6 +57,7 @@ class Storage final : public Singleton<Storage> {
         }
     };
     ~Storage() {
+        std::cout << "Save\n";
         std::ofstream f("vault.json");
         f << data.dump(2) << std::endl;
     };

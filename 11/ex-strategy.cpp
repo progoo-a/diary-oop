@@ -1,5 +1,6 @@
 /**
- * Implémenter le design pattern `strategy` a executer sur un vecteur d'entiers généré depuis l'entrée standard
+ * Implémenter le design pattern `strategy` a executer sur un vecteur d'entiers
+ * généré depuis l'entrée standard
  *
  * ```console
  * echo "4 8 15 16 23 42" | ./a.out add
