@@ -61,7 +61,6 @@ class Storage final : public Singleton<Storage> {
         std::ofstream f("vault.json");
         f << data.dump(2) << std::endl;
     };
-
    private:
     json data;
 };
@@ -74,7 +73,7 @@ int main() {
 
     std::cout << store.retrieve("foo") << std::endl;
 
-    for (auto &e : store.instance().items()) {
+    for (auto &e : Storage::instance().items()) {
         std::cout << e.key() << " " << e.value() << std::endl;
     }
 }
