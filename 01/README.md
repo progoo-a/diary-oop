@@ -68,7 +68,45 @@ p1.display(); // Affiche Point(5, 7)
 
 En C++, un flux de données (ou *stream*) est une abstraction utilisée pour gérer l'entrée et la sortie de données. Les flux permettent de lire et d'écrire des données de manière séquentielle, que ce soit à partir de fichiers, de la console, ou d'autres sources.
 
-## Exercice 
+## Exercices
+
+### Exercice 1
+
+- Réaliser un programme e C++ qui lit un entier de l'entrée standard et l'affiche sur la sortie standard.
+- Vous pouvez modifier la valeur avant de l'afficher, par exemple la doubler.
+- Utiliser les flux de données (`std::cin`, `std::cout`).
+
+### Exercice 2
 
 - Réaliser un programme en C++ qui récupère 10 valeurs entières sur l'entrée standard et en calcul la moyenne.
 - Ces valeurs seront stockées dans un tableau dynamique (utiliser `std::vector`).
+
+### Exercice 3
+
+- Avec l'exercice 2 on a plusieurs problèmes: 
+  - Problème de responsabilités : tout est dans main. 
+  - Les données sont accessibles partout dans le main : pas de protection.
+- Refactoriser le code en créant une classe `Statistics` qui gère les données
+- La classe doit avoir les méthodes suivantes:
+  - `void add(int value)` : ajoute une valeur
+  - `double average() const` : calcule la moyenne
+  - `int min() const` : retourne la valeur minimale
+  - `int max() const` : retourne la valeur maximale
+- En attributs, la classe doit avoir un `std::vector<int>` pour stocker les valeurs.
+
+Voici le main: 
+
+```cpp
+int main() {
+    Statistics stats;
+    for (int i = 0; i < 10; ++i) {
+        int value;
+        std::cin >> value;
+        stats.add(value);
+    }
+
+    std::cout << "Average: " << stats.average() << std::endl;
+    std::cout << "Min: " << stats.min() << std::endl;
+    std::cout << "Max: " << stats.max() << std::endl;
+}
+```
