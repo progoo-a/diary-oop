@@ -1,42 +1,59 @@
+# Cours Orienté Objets en C++
 
-int toto = 42; // Objet 
-int tata = 23;
+## Objectifs 
 
-int unsigned int, long, unsigned long, long long, unsigned long long
-char, unsigned char, short, unsigned short, float, double, long double
-bool 
+L'objectif de ce cours est d'acquérir de solides connaissances en programmation orientée objets (POO) de manière générale, en utilisant le langage C++ comme support principal. L'utilisation de C++ permet également d'introduire ce langage puissant et largement utilisé dans le développement de logiciels modernes, ce dernier permet de comprendre mieux les éléments fondamentaux de l'informatique tels que la gestion de la mémoire, les performances et l'optimisation du code.
 
-typedef struct person {
-    char name[50];
-    int age;
-    int height;
-} Person;
+## Checklist 
 
-Person john = {"John Doe", 30, 175};
-
-typedef struct circle {
-    float radius;
-    char color[20];
-
-    Circle operator+(Circle other) {
-        float area1 = 3.14 * radius * radius;
-        float area2 = 3.14 * other.radius * other.radius;
-        float totalArea = area1 + area2;
-        float newRadius = sqrt(totalArea / 3.14);
-        return Circle{newRadius, "mixed"};
-    }
-} Circle;
-
-Circle a = {5.5, "red"};
-Circle b = {3.2, "blue"};
-
-Circle c = a + b;
-Circle d = b + a;
-
-toto + tata;
-
-
-
-a = 2;
-a := 2;
-a == 2;
+- [x] C++ vs C
+- [x] Classes et Objets
+- [ ] Syntaxe
+  - [x] Références vs Pointeurs
+  - [ ] Most vexing parse
+  - [ ] Uniform Initialization
+  - [ ] List Initialization
+  - [ ] Narrowing Conversion
+  - [ ] Lambda Expressions
+- [ ] Encapsulation
+- [ ] Héritage
+  - [x] Héritage simple
+  - [ ] Problème du Diamant
+- [.] Polymorphisme
+  - [x] Polymorphisme Statique
+  - [ ] Polymorphisme Dynamique
+- [x] Constructeurs et Destructeurs
+- [x] Surcharge d'Opérateurs
+- [x] Fonctions Membres
+  - [x] Fonctions Constantes
+  - [x] Fonctions Statique
+  - [x] Fonctions Amies
+- [x] Espaces de Noms (Namespaces)
+- [x] Modificateurs d'Accès (public, private, protected)
+- [x] Fonctions Virtuelles
+  - [x] Fonctions Virtuelles Pures
+  - [x] Classes Abstraites
+  - [x] Interfaces
+- [x] Modèles (Templates)
+  - [x] Templates de base
+  - [x] CRTP
+- [ ] Gestion de la Mémoire
+  - [ ] Smart Pointers
+  - [ ] Allocation Dynamique
+- [ ] Exceptions et Gestion des Erreurs
+- [ ] Bibliothèques Standard (STL)
+  - [x] Containers
+  - [ ] Itérateurs
+- [ ] Architecture Orientée Objets
+  - [ ] Principes SOLID
+  - [x] UML
+    - [x] Diagramme de classe
+    - [x] Composition
+    - [x] Agrégation
+    - [x] Héritage
+    - [x] Réalisation
+  - [ ] Design Patterns
+    - [ ] Singleton
+    - [ ] Factory
+    - [ ] Observer
+    - [ ] Visitor
