@@ -57,3 +57,10 @@ L'objectif de ce cours est d'acquérir de solides connaissances en programmation
     - [ ] Factory
     - [ ] Observer
     - [ ] Visitor
+- [ ] Avancé
+  - [ ] RAII
+  - [ ] SFINAE
+  - [ ] PIMPL
+  - [ ] CQRS
+  - [ ] Concepts (C++20)
+  - [ ] Ranges et Views (C++20)
